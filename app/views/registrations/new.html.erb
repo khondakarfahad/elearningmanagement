@@ -1,0 +1,9 @@
+<h1>Sign up</h1>
+<div class="row justify-content-center">
+  <%= render 'form', user: @user %>
+</div>
+<br>
+<h1>Create a new account</h1>
+<div class="row justify-content-center">
+  <%= link_to '<button type="button">Add new user</button>'.html_safe, new_user_path %>
+</div>

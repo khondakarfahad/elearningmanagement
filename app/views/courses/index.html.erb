@@ -1,0 +1,22 @@
+<h1>Courses</h1>
+<div clas="row">
+  <div class="col-md-12">
+    <table class="table">
+      <thead>
+      <th>Course name</th>
+      <th>Lessons name</th>
+      </thead>
+      <tbody>
+      <% @courses.each do |course| %>
+        <tr>
+          <td><%= course.name %></td>
+          <td><%= course.lessons.map { |l| l.name } %></td>
+          <td><%= link_to 'Show', course_path(course) %></td>
+          <td><%= link_to 'Edit', edit_course_path(course) %></td>
+          <td><%= link_to 'Delete', course, method: :delete, data: {confirm: 'Confirm', resource: 'Course'} %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

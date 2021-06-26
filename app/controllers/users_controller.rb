@@ -8,13 +8,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      flash[:notice] = 'User created successfully'
-      redirect_to users_path
+    user = params[:user]
+    @user = User.find_by(first_name: user[:first_name],
+                         last_name: user[:last_name],
+                         password: user[:password])
+    if @user
+      flash[:notice] = 'Login successfully'
+      redirect_to user_path(@user)
     else
-      flash[:notice] = @user.errors.full_messages.to_sentence
-      redirect_to new_user_path
+      render json: { error: 'Could not login due to name or password' },
+             status: :unprocessable_entity
     end
   end
 

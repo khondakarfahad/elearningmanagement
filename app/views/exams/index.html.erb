@@ -1,0 +1,14 @@
+<h1>Attend Quiz Exam</h1>
+<div clas="row">
+  <div class="col-md-12">
+    <% @questions.map do |question| %>
+      <%= question[:name] %>
+      <div>
+        <%= simple_form_for(question) do |f| %>
+          <%= f.input :options, as: :radio_buttons, collection: [question.options.split(',')&.first, question.options.split(',')&.second, question.options.split(',')&.third, question.options.split(',')&.fourth] %>
+        <% end %>
+      </div>
+      <% end %>
+    <br>
+  </div>
+</div>

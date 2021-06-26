@@ -1,0 +1,13 @@
+<%= simple_form_for @question do |f| %>
+  <%= f.association :lesson, label: false, as: :select, collection: Lesson.all, prompt: 'Choose a lesson' %>
+  </br>
+  <%= f.text_field :name, label: false, placeholder: 'Write a Question' %>
+  </br>
+  <%= f.text_field :options, label: false, placeholder: 'Set options' %>
+  </br>
+  <%= f.text_field :answer, label: false, placeholder: 'Set answer' %>
+  </br>
+  <div class="action-group">
+    <%= f.button :submit, 'Submit' %>
+  </div>
+<% end %>

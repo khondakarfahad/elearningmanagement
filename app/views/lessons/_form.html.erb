@@ -1,0 +1,9 @@
+<%= simple_form_for @lesson do |f| %>
+  <%= f.association :course, label: false, as: :select, collection: Course.all, prompt: 'Choose a course' %>
+  </br>
+  <%= f.text_field :name, label: false, placeholder: 'Lesson Name' %>
+  </br>
+  <div class="action-group">
+    <%= f.button :submit, 'Submit' %>
+  </div>
+<% end %>

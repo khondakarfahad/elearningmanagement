@@ -1,0 +1,21 @@
+<h1>Question</h1>
+<div clas="row">
+  <div class="col-md-12">
+    <table class="table">
+      <thead>
+      <th>Lesson name</th>
+      <th>Question</th>
+      <th>Options</th>
+      <th>Answer</th>
+      </thead>
+      <tbody>
+      <tr>
+        <td><%= @question.lesson.name %></td>
+        <td><%= @question.name %></td>
+        <td><%= @question.options %>
+        <td><%= @question.answer %></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
