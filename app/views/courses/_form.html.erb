@@ -1,0 +1,7 @@
+<%= form_with model: @course do |f| %>
+  <%= f.text_field :name, label: false, placeholder: 'Course Name' %>
+  <br>
+  <div class="action-group">
+    <%= f.submit 'Submit' %>
+  </div>
+<% end %>

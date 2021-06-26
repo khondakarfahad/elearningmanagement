@@ -1,0 +1,26 @@
+<h1>Question</h1>
+<div clas="row">
+  <div class="col-md-12">
+    <table class="table">
+      <thead>
+      <th>Lesson name</th>
+      <th>Question</th>
+      <th>Options</th>
+      <th>Answer</th>
+      </thead>
+      <tbody>
+      <% @questions.each do |question| %>
+        <tr>
+          <td><%= question.lesson.name %></td>
+          <td><%= question.name %></td>
+          <td><%= question.options %></td>
+          <td><%= question.answer %></td>
+          <td><%= link_to 'Show', question_path(question) %></td>
+          <td><%= link_to 'Edit', edit_question_path(question) %></td>
+          <td><%= link_to 'Delete', question, method: :delete, data: {confirm: 'Confirm', resource: 'Question'} %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
